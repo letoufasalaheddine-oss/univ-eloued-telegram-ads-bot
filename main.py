@@ -9,140 +9,109 @@ CHANNELS = os.getenv("CHANNELS", "").split(",")
 
 LAST_FILE = "last_post.txt"
 
-
 def get_latest_post():
+headers = {
+"User-Agent": "Mozilla/5.0"
+}
 
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
+response = requests.get(
+URL,
+headers=headers,
+timeout=30
+)
 
-    response = requests.get(
-        URL,
-        headers=headers,
-        timeout=30
-    )
+response.raise_for_status()
 
-    response.raise_for_status()
+soup = BeautifulSoup(response.text, "html.parser")
 
-    soup = BeautifulSoup(response.text, "html.parser")
+for a in soup.find_all("a", href=True):
 
-    # اختبار محتوى الصفحة
-    print("PAGE TITLE:")
-    print(soup.title)
+href = a["href"].strip()    
 
-    print("\nPAGE TEXT:")
-    print(soup.get_text(" ", strip=True)[:1000])
+if "/ads/" not in href and "/post/" not in href:    
+    continue    
 
+title = a.get_text(" ", strip=True)    
 
-    for a in soup.find_all("a", href=True):
+if not title:    
+    continue    
 
-        href = a["href"].strip()
+if href.startswith("/"):    
+    href = "https://www.univ-eloued.dz" + href    
 
-        title = a.get_text(" ", strip=True)
+print("Found:", title)    
+print("URL:", href)    
 
-        if not title:
-            continue
+return title, href
 
-        if href.startswith("/"):
-            href = "https://www.univ-eloued.dz" + href
-
-        print("\nFOUND LINK:")
-        print(title)
-        print(href)
-
-        return title, href
-
-
-    print("No announcement found")
-    return None, None
-
-
+print("No announcement found")
+return None, None
 
 def read_last():
 
-    if not os.path.exists(LAST_FILE):
-        return ""
+if not os.path.exists(LAST_FILE):
+return ""
 
-    with open(LAST_FILE, "r", encoding="utf-8") as f:
-        return f.read().strip()
-
-
+with open(LAST_FILE, "r", encoding="utf-8") as f:
+return f.read().strip()
 
 def save_last(link):
 
-    with open(LAST_FILE, "w", encoding="utf-8") as f:
-        f.write(link)
-
-
+with open(LAST_FILE, "w", encoding="utf-8") as f:
+f.write(link)
 
 def send_telegram(title, link):
 
-    message = f"""📢 إعلان جديد - جامعة الوادي
+message = f"""📢 إعلان جديد - جامعة الوادي
 
-📝 {title}
+{title}
 
 🔗 الرابط:
 {link}
 """
 
+for channel in CHANNELS:
 
-    for channel in CHANNELS:
+channel = channel.strip()    
 
-        channel = channel.strip()
+if not channel:    
+    continue    
 
-        if not channel:
-            continue
+requests.post(    
+    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",    
+    data={    
+        "chat_id": channel,    
+        "text": message    
+    },    
+    timeout=30    
+)    
 
-        requests.post(
-            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-            data={
-                "chat_id": channel,
-                "text": message
-            },
-            timeout=30
-        )
-
-        print("Sent to:", channel)
-
-
+print("Sent to:", channel)
 
 def main():
 
-    print("Starting monitor...")
+print("Starting monitor...")
 
+if not BOT_TOKEN:
+print("BOT_TOKEN missing")
+return
 
-    if not BOT_TOKEN:
-        print("BOT_TOKEN missing")
-        return
+title, link = get_latest_post()
 
+if not link:
+return
 
-    title, link = get_latest_post()
+last = read_last()
 
+if link == last:
+print("No new announcement")
+return
 
-    print("\nRESULT:")
-    print(title)
-    print(link)
+send_telegram(title, link)
 
+save_last(link)
 
-    if not link:
-        return
+print("Done")
 
-
-    last = read_last()
-
-
-    if link == last:
-        print("No new announcement")
-        return
-
-
-    send_telegram(title, link)
-
-    save_last(link)
-
-    print("Done")
-
-
-
-if __name__ == "__main__":
-    main()
+if name == "main":
+main()
