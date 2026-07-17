@@ -8,7 +8,7 @@ URL = "https://www.univ-eloued.dz/ar/ads/"
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNELS = os.getenv("CHANNELS", "").split(",")
 
-OLD_FILE = "sent_posts.json"
+OLD_FILE = "last_post.txt"
 
 
 def get_latest_post():
@@ -184,7 +184,7 @@ def main():
 
         else:
 
-            print("هذا الإعلان تم نشره سابقا، لا يوجد إرسال.")
+            print("هذا الإعلان تم نشره سابقا.")
 
 
 
