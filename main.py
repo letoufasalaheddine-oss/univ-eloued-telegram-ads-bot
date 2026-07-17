@@ -21,51 +21,44 @@ def get_latest_post():
     response.encoding = "utf-8"
 
     print("حالة الموقع:", response.status_code)
-    print("هل وجد كلمة المستجدات؟", "المستجدات" in response.text)
 
     soup = BeautifulSoup(response.text, "html.parser")
 
 
-    containers = soup.find_all(
-        "div",
-        class_="elementor-widget-container"
-    )
+    # البحث عن جميع الروابط
+    links = soup.find_all("a", href=True)
 
 
-    for container in containers:
+    for link in links:
 
-        if "المستجدات" in container.text:
-
-
-            links = container.find_all(
-                "a",
-                href=True
-            )
+        title = link.text.strip()
+        url = link["href"]
 
 
-            for link in links:
+        # اختيار روابط الإعلانات فقط
+        if (
+            title
+            and "/ar/" in url
+            and "ads" not in url
+        ):
 
-                title = link.text.strip()
+            parent = link.find_parent("p")
 
-                if title:
+            date = ""
 
-                    parent = link.find_parent("p")
+            if parent:
 
-                    date = ""
+                span = parent.find("span")
 
-                    if parent:
-
-                        span = parent.find("span")
-
-                        if span:
-                            date = span.text.strip()
+                if span:
+                    date = span.text.strip()
 
 
-                    return {
-                        "title": title,
-                        "link": link["href"],
-                        "date": date
-                    }
+            return {
+                "title": title,
+                "link": url,
+                "date": date
+            }
 
 
     return None
@@ -75,27 +68,17 @@ def get_latest_post():
 def load_old_post():
 
     try:
-        with open(
-            OLD_FILE,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
+        with open(OLD_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
 
     except:
-
         return None
 
 
 
 def save_post(post):
 
-    with open(
-        OLD_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
+    with open(OLD_FILE, "w", encoding="utf-8") as f:
 
         json.dump(
             post,
@@ -120,13 +103,11 @@ def send_telegram(post):
 """
 
 
-    telegram_url = (
-        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    )
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
 
     requests.post(
-        telegram_url,
+        url,
         data={
             "chat_id": CHANNELS,
             "text": message
@@ -149,7 +130,6 @@ print(latest)
 if latest:
 
     old = load_old_post()
-
 
     if latest != old:
 
