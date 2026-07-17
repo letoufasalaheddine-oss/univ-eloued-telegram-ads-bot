@@ -2,7 +2,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-URL = "https://www.univ-eloued.dz/ar/ads/"
+URL = "https://www.univ-eloued.dz/ar/"
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNELS = os.getenv("CHANNELS", "").split(",")
