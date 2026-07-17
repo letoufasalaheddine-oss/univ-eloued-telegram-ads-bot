@@ -26,32 +26,42 @@ def get_latest_post():
 
     soup = BeautifulSoup(response.text, "html.parser")
 
+
+    posts = []
+
     for a in soup.find_all("a", href=True):
 
         href = a["href"].strip()
 
-        # تجاهل الروابط الإنجليزية
+        # تجاهل الإنجليزية
         if "/en/" in href:
+            continue
+
+        # أخذ روابط الإعلانات فقط
+        if "/ads/" not in href and "/post/" not in href:
             continue
 
         title = a.get_text(" ", strip=True)
 
-        # تجاهل النصوص الفارغة
         if not title:
             continue
 
-        # تجاهل كلمة EN
-        if title.strip() == "EN":
-            continue
-
-        # التأكد أن العنوان عربي
+        # يجب أن يكون العنوان عربي
         if not any('\u0600' <= c <= '\u06FF' for c in title):
             continue
 
         if href.startswith("/"):
             href = "https://www.univ-eloued.dz" + href
 
-        print("Arabic Found:", title)
+        posts.append((title, href))
+
+
+    if posts:
+
+        # أخذ أول إعلان
+        title, href = posts[0]
+
+        print("Found:", title)
         print("URL:", href)
 
         return title, href
@@ -87,8 +97,6 @@ def send_telegram(title, link):
 
 🔗 الرابط:
 {link}
-
-🎓 قناة طلبة جامعة الوادي
 """
 
 
@@ -100,7 +108,7 @@ def send_telegram(title, link):
             continue
 
 
-        response = requests.post(
+        requests.post(
             f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
             data={
                 "chat_id": channel,
@@ -109,11 +117,7 @@ def send_telegram(title, link):
             timeout=30
         )
 
-
-        if response.status_code == 200:
-            print("Sent to:", channel)
-        else:
-            print("Telegram error:", response.text)
+        print("Sent to:", channel)
 
 
 
@@ -121,17 +125,12 @@ def main():
 
     print("Starting monitor...")
 
-
     if not BOT_TOKEN:
         print("BOT_TOKEN missing")
         return
 
 
     title, link = get_latest_post()
-
-
-    print("TITLE:", title)
-    print("LINK:", link)
 
 
     if not link:
@@ -148,9 +147,7 @@ def main():
 
     send_telegram(title, link)
 
-
     save_last(link)
-
 
     print("Done")
 
