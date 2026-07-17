@@ -1,13 +1,14 @@
 import os
 import requests
 from bs4 import BeautifulSoup
+import json
 
 URL = "https://www.univ-eloued.dz/ar/ads/"
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHANNELS = [c.strip() for c in os.getenv("CHANNELS", "").split(",") if c.strip()]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
 
-LAST_FILE = "last_post.txt"
+OLD_FILE = "last_post.json"
 
 
 def get_latest_post():
@@ -15,94 +16,100 @@ def get_latest_post():
         "User-Agent": "Mozilla/5.0"
     }
 
-    response = requests.get(URL, headers=headers, timeout=30)
-    response.raise_for_status()
+    response = requests.get(URL, headers=headers)
+    response.encoding = "utf-8"
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-    # البحث داخل قائمة المستجدات فقط
-    posts = soup.select("div.elementor-posts-container article.elementor-post")
+    containers = soup.find_all(
+        "div",
+        class_="elementor-widget-container"
+    )
 
-    if not posts:
-        print("لم يتم العثور على أي مستجد.")
-        return None, None
+    for container in containers:
 
-    latest = posts[0]
+        # البحث عن قسم المستجدات فقط
+        if "المستجدات" in container.text:
 
-    a = latest.select_one("h3.elementor-post__title a")
+            posts = container.find_all("p")
 
-    if not a:
-        print("تعذر استخراج الإعلان.")
-        return None, None
+            for post in posts:
 
-    title = a.get_text(strip=True)
-    link = a["href"]
+                link = post.find("a")
 
-    if link.startswith("/"):
-        link = "https://www.univ-eloued.dz" + link
+                if link:
+                    title = link.text.strip()
+                    url = link.get("href")
 
-    print("Latest:", title)
-    print("Link:", link)
+                    date = post.find("span")
 
-    return title, link
+                    if date:
+                        date = date.text.strip()
+                    else:
+                        date = ""
+
+                    return {
+                        "title": title,
+                        "link": url,
+                        "date": date
+                    }
+
+    return None
 
 
-def send_telegram(title, link):
+def load_old_post():
+    try:
+        with open(OLD_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
 
-    message = f"""📢 إعلان جديد - جامعة الشهيد حمه لخضر بالوادي
+    except:
+        return None
 
-📌 {title}
 
-🔗 {link}
+def save_post(post):
+    with open(OLD_FILE, "w", encoding="utf-8") as f:
+        json.dump(
+            post,
+            f,
+            ensure_ascii=False,
+            indent=4
+        )
+
+
+def send_telegram(post):
+
+    message = f"""
+📢 مستجد جديد - جامعة الوادي
+
+📝 {post['title']}
+
+📅 {post['date']}
+
+🔗 الرابط:
+{post['link']}
 """
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    telegram_url = (
+        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    )
 
-    for channel in CHANNELS:
-        try:
-            response = requests.post(
-                url,
-                data={
-                    "chat_id": channel,
-                    "text": message,
-                    "disable_web_page_preview": False
-                },
-                timeout=30
-            )
-
-            if response.status_code == 200:
-                print(f"تم الإرسال إلى {channel}")
-            else:
-                print(f"فشل الإرسال إلى {channel}: {response.text}")
-
-        except Exception as e:
-            print(f"خطأ أثناء الإرسال إلى {channel}: {e}")
+    requests.post(
+        telegram_url,
+        data={
+            "chat_id": CHAT_ID,
+            "text": message
+        }
+    )
 
 
-def main():
+# تشغيل البرنامج
 
-    title, link = get_latest_post()
+latest = get_latest_post()
 
-    if not link:
-        return
+if latest:
 
-    last_link = ""
+    old = load_old_post()
 
-    if os.path.exists(LAST_FILE):
-        with open(LAST_FILE, "r", encoding="utf-8") as f:
-            last_link = f.read().strip()
-
-    if link == last_link:
-        print("لا يوجد مستجد جديد.")
-        return
-
-    send_telegram(title, link)
-
-    with open(LAST_FILE, "w", encoding="utf-8") as f:
-        f.write(link)
-
-    print("تم إرسال المستجد الجديد.")
-
-
-if __name__ == "__main__":
-    main()
+    if latest != old:
+        send_telegram(latest)
+        save_post(latest)
