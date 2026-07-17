@@ -9,60 +9,50 @@ CHANNELS = os.getenv("CHANNELS", "").split(",")
 
 LAST_FILE = "last_post.txt"
 
+
 def get_latest_post():
-headers = {
-"User-Agent": "Mozilla/5.0"
-}
 
-response = requests.get(
-URL,
-headers=headers,
-timeout=30
-)
+    headers = {
+        "User-Agent": "Mozilla/5.0"
+    }
 
-response.raise_for_status()
+    response = requests.get(
+        URL,
+        headers=headers,
+        timeout=30
+    )
 
-soup = BeautifulSoup(response.text, "html.parser")
+    response.raise_for_status()
 
-for a in soup.find_all("a", href=True):
+    soup = BeautifulSoup(response.text, "html.parser")
 
-href = a["href"].strip()    
+    for a in soup.find_all("a", href=True):
 
-if "/ads/" not in href and "/post/" not in href:    
-    continue    
+        href = a["href"].strip()
 
-title = a.get_text(" ", strip=True)    
+        if "/ads/" not in href and "/post/" not in href:
+            continue
 
-if not title:    
-    continue    
+        title = a.get_text(" ", strip=True)
 
-if href.startswith("/"):    
-    href = "https://www.univ-eloued.dz" + href    
+        if not title:
+            continue
 
-print("Found:", title)    
-print("URL:", href)    
+        if href.startswith("/"):
+            href = "https://www.univ-eloued.dz" + href
 
-return title, href
+        print("Found:", title)
+        print("URL:", href)
 
-print("No announcement found")
-return None, None
+        return title, href
 
-def read_last():
+    print("No announcement found")
+    return None, None
 
-if not os.path.exists(LAST_FILE):
-return ""
-
-with open(LAST_FILE, "r", encoding="utf-8") as f:
-return f.read().strip()
-
-def save_last(link):
-
-with open(LAST_FILE, "w", encoding="utf-8") as f:
-f.write(link)
 
 def send_telegram(title, link):
 
-message = f"""📢 إعلان جديد - جامعة الوادي
+    message = f"""📢 إعلان جديد - جامعة الوادي
 
 {title}
 
@@ -70,48 +60,25 @@ message = f"""📢 إعلان جديد - جامعة الوادي
 {link}
 """
 
-for channel in CHANNELS:
+    for channel in CHANNELS:
 
-channel = channel.strip()    
+        requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            data={
+                "chat_id": channel,
+                "text": message
+            },
+            timeout=30
+        )
 
-if not channel:    
-    continue    
-
-requests.post(    
-    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",    
-    data={    
-        "chat_id": channel,    
-        "text": message    
-    },    
-    timeout=30    
-)    
-
-print("Sent to:", channel)
 
 def main():
 
-print("Starting monitor...")
+    title, link = get_latest_post()
 
-if not BOT_TOKEN:
-print("BOT_TOKEN missing")
-return
+    if link:
+        send_telegram(title, link)
 
-title, link = get_latest_post()
 
-if not link:
-return
-
-last = read_last()
-
-if link == last:
-print("No new announcement")
-return
-
-send_telegram(title, link)
-
-save_last(link)
-
-print("Done")
-
-if name == "main":
-main()
+if __name__ == "__main__":
+    main()
