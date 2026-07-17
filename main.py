@@ -25,63 +25,37 @@ def get_latest_post():
     soup = BeautifulSoup(response.text, "html.parser")
 
 
-    # البحث عن كلمة المستجدات
-    title = soup.find(
-        lambda tag: tag.name in ["h1", "h2", "h3", "p", "strong"]
-        and "المستجدات" in tag.text
-    )
+    # البحث عن إعلانات المستجدات
+    for p in soup.find_all("p"):
+
+        link = p.find("a", href=True)
+
+        if link:
+
+            title = link.text.strip()
+            href = link["href"]
 
 
-    if not title:
-        print("لم يتم العثور على عنوان المستجدات")
-        return None
+            # التأكد أنه إعلان من الجامعة
+            if (
+                title
+                and "https://www.univ-eloued.dz/ar/" in href
+                and "our-policies" not in href
+            ):
 
+                span = p.find("span")
 
-    # البحث عن الحاوية التي تحتوي على المستجدات
-    container = title.find_parent("div")
-
-
-    if not container:
-        print("لم يتم العثور على الحاوية")
-        return None
-
-
-    links = container.find_all(
-        "a",
-        href=True
-    )
-
-
-    for link in links:
-
-        text = link.text.strip()
-        href = link["href"]
-
-
-        if (
-            text
-            and "/ar/" in href
-            and "policies" not in href
-            and "menu" not in href
-        ):
-
-            parent = link.find_parent("p")
-
-            date = ""
-
-            if parent:
-
-                span = parent.find("span")
+                date = ""
 
                 if span:
                     date = span.text.strip()
 
 
-            return {
-                "title": text,
-                "link": href,
-                "date": date
-            }
+                return {
+                    "title": title,
+                    "link": href,
+                    "date": date
+                }
 
 
     return None
@@ -91,14 +65,17 @@ def get_latest_post():
 def load_old_post():
 
     try:
+
         with open(
             OLD_FILE,
             "r",
             encoding="utf-8"
         ) as f:
+
             return json.load(f)
 
     except:
+
         return None
 
 
@@ -163,7 +140,6 @@ print(latest)
 if latest:
 
     old = load_old_post()
-
 
     if latest != old:
 
