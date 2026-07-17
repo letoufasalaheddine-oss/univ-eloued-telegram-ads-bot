@@ -6,7 +6,7 @@ import json
 URL = "https://www.univ-eloued.dz/ar/ads/"
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
-CHAT_ID = os.environ["CHAT_ID"]
+CHANNELS = os.environ["CHANNELS"]
 
 OLD_FILE = "last_post.json"
 
@@ -28,7 +28,6 @@ def get_latest_post():
 
     for container in containers:
 
-        # البحث عن قسم المستجدات فقط
         if "المستجدات" in container.text:
 
             posts = container.find_all("p")
@@ -96,13 +95,11 @@ def send_telegram(post):
     requests.post(
         telegram_url,
         data={
-            "chat_id": CHAT_ID,
+            "chat_id": CHANNELS,
             "text": message
         }
     )
 
-
-# تشغيل البرنامج
 
 latest = get_latest_post()
 
