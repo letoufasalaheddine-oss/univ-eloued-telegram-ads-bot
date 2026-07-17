@@ -25,21 +25,44 @@ def get_latest_post():
     soup = BeautifulSoup(response.text, "html.parser")
 
 
-    # البحث عن جميع الروابط
-    links = soup.find_all("a", href=True)
+    # البحث عن كلمة المستجدات
+    title = soup.find(
+        lambda tag: tag.name in ["h1", "h2", "h3", "p", "strong"]
+        and "المستجدات" in tag.text
+    )
+
+
+    if not title:
+        print("لم يتم العثور على عنوان المستجدات")
+        return None
+
+
+    # البحث عن الحاوية التي تحتوي على المستجدات
+    container = title.find_parent("div")
+
+
+    if not container:
+        print("لم يتم العثور على الحاوية")
+        return None
+
+
+    links = container.find_all(
+        "a",
+        href=True
+    )
 
 
     for link in links:
 
-        title = link.text.strip()
-        url = link["href"]
+        text = link.text.strip()
+        href = link["href"]
 
 
-        # اختيار روابط الإعلانات فقط
         if (
-            title
-            and "/ar/" in url
-            and "ads" not in url
+            text
+            and "/ar/" in href
+            and "policies" not in href
+            and "menu" not in href
         ):
 
             parent = link.find_parent("p")
@@ -55,8 +78,8 @@ def get_latest_post():
 
 
             return {
-                "title": title,
-                "link": url,
+                "title": text,
+                "link": href,
                 "date": date
             }
 
@@ -68,7 +91,11 @@ def get_latest_post():
 def load_old_post():
 
     try:
-        with open(OLD_FILE, "r", encoding="utf-8") as f:
+        with open(
+            OLD_FILE,
+            "r",
+            encoding="utf-8"
+        ) as f:
             return json.load(f)
 
     except:
@@ -78,7 +105,11 @@ def load_old_post():
 
 def save_post(post):
 
-    with open(OLD_FILE, "w", encoding="utf-8") as f:
+    with open(
+        OLD_FILE,
+        "w",
+        encoding="utf-8"
+    ) as f:
 
         json.dump(
             post,
@@ -103,11 +134,13 @@ def send_telegram(post):
 """
 
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    telegram_url = (
+        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    )
 
 
     requests.post(
-        url,
+        telegram_url,
         data={
             "chat_id": CHANNELS,
             "text": message
@@ -130,6 +163,7 @@ print(latest)
 if latest:
 
     old = load_old_post()
+
 
     if latest != old:
 
