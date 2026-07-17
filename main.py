@@ -26,48 +26,34 @@ def get_latest_post():
 
     soup = BeautifulSoup(response.text, "html.parser")
 
+    # اختبار محتوى الصفحة
+    print("PAGE TITLE:")
+    print(soup.title)
 
-    posts = []
+    print("\nPAGE TEXT:")
+    print(soup.get_text(" ", strip=True)[:1000])
+
 
     for a in soup.find_all("a", href=True):
 
         href = a["href"].strip()
-
-        # تجاهل الإنجليزية
-        if "/en/" in href:
-            continue
-
-        # أخذ روابط الإعلانات فقط
-        if "/ads/" not in href and "/post/" not in href:
-            continue
 
         title = a.get_text(" ", strip=True)
 
         if not title:
             continue
 
-        # يجب أن يكون العنوان عربي
-        if not any('\u0600' <= c <= '\u06FF' for c in title):
-            continue
-
         if href.startswith("/"):
             href = "https://www.univ-eloued.dz" + href
 
-        posts.append((title, href))
-
-
-    if posts:
-
-        # أخذ أول إعلان
-        title, href = posts[0]
-
-        print("Found:", title)
-        print("URL:", href)
+        print("\nFOUND LINK:")
+        print(title)
+        print(href)
 
         return title, href
 
 
-    print("No Arabic announcement found")
+    print("No announcement found")
     return None, None
 
 
@@ -107,7 +93,6 @@ def send_telegram(title, link):
         if not channel:
             continue
 
-
         requests.post(
             f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
             data={
@@ -125,12 +110,18 @@ def main():
 
     print("Starting monitor...")
 
+
     if not BOT_TOKEN:
         print("BOT_TOKEN missing")
         return
 
 
     title, link = get_latest_post()
+
+
+    print("\nRESULT:")
+    print(title)
+    print(link)
 
 
     if not link:
