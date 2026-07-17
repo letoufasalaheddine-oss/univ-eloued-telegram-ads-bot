@@ -25,13 +25,11 @@ def get_latest_post():
 
     soup = BeautifulSoup(response.text, "html.parser")
 
+    candidates = []
+
     for a in soup.find_all("a", href=True):
 
         href = a["href"].strip()
-
-        if "/ads/" not in href and "/post/" not in href:
-            continue
-
         title = a.get_text(" ", strip=True)
 
         if not title:
@@ -40,13 +38,54 @@ def get_latest_post():
         if href.startswith("/"):
             href = "https://www.univ-eloued.dz" + href
 
-        print("Found:", title)
-        print("URL:", href)
+        # تجاهل صفحات الإعلانات نفسها
+        if href.rstrip("/") in (
+            "https://www.univ-eloued.dz/ar/ads",
+            "https://www.univ-eloued.dz/en/ads",
+            "https://www.univ-eloued.dz/fr/ads",
+        ):
+            continue
 
-        return title, href
+        # تجاهل روابط الأقسام والصفحات العامة
+        if "/ar/" not in href and "/en/" not in href and "/fr/" not in href:
+            continue
 
-    print("No announcement found")
-    return None, None
+        if href.endswith("/ar/") or href.endswith("/en/") or href.endswith("/fr/"):
+            continue
+
+        # حذف التكرار
+        if (title, href) not in candidates:
+            candidates.append((title, href))
+
+    if not candidates:
+        print("No announcement found")
+        return None, None
+
+    # العربية أولاً
+    for title, href in candidates:
+        if "/ar/" in href:
+            print("Found (AR):", title)
+            print("URL:", href)
+            return title, href
+
+    # الإنجليزية ثانياً
+    for title, href in candidates:
+        if "/en/" in href:
+            print("Found (EN):", title)
+            print("URL:", href)
+            return title, href
+
+    # الفرنسية أخيراً
+    for title, href in candidates:
+        if "/fr/" in href:
+            print("Found (FR):", title)
+            print("URL:", href)
+            return title, href
+
+    print("Found:", candidates[0][0])
+    print("URL:", candidates[0][1])
+
+    return candidates[0]
 
 
 def read_last():
