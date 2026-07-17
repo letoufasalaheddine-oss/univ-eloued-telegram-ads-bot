@@ -26,86 +26,43 @@ def get_latest_post():
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-
     for a in soup.find_all("a", href=True):
 
-        title = a.get_text(" ", strip=True)
         href = a["href"].strip()
 
+        if "/ads/" not in href and "/post/" not in href:
+            continue
+
+        title = a.get_text(" ", strip=True)
 
         if not title:
             continue
 
-
-        # تجاهل رابط صفحة المستجدات
-        if title == "صفحة مستجدات وإعلانات جامعة الوادي":
-            continue
-
-
-        # تجاهل الإنجليزية
-        if "/en/" in href:
-            continue
-
-
-        # أخذ النص العربي فقط
-        if not any('\u0600' <= c <= '\u06FF' for c in title):
-            continue
-
-
         if href.startswith("/"):
             href = "https://www.univ-eloued.dz" + href
 
-
-        print("FOUND:")
-        print("TITLE:", title)
+        print("Found:", title)
         print("URL:", href)
-
 
         return title, href
 
-
     print("No announcement found")
     return None, None
-
-
-
-def read_last():
-
-    if not os.path.exists(LAST_FILE):
-        return ""
-
-    with open(LAST_FILE, "r", encoding="utf-8") as f:
-        return f.read().strip()
-
-
-
-def save_last(link):
-
-    with open(LAST_FILE, "w", encoding="utf-8") as f:
-        f.write(link)
-
 
 
 def send_telegram(title, link):
 
     message = f"""📢 إعلان جديد - جامعة الوادي
 
-📝 {title}
+{title}
 
 🔗 الرابط:
 {link}
 """
 
-
     for channel in CHANNELS:
 
-        channel = channel.strip()
-
-        if not channel:
-            continue
-
-
-        response = requests.post(
+        requests.post(
             f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
             data={
                 "chat_id": channel,
@@ -115,42 +72,12 @@ def send_telegram(title, link):
         )
 
 
-        print(response.text)
-
-
-
 def main():
-
-    print("Starting monitor...")
-
-
-    if not BOT_TOKEN:
-        print("BOT_TOKEN missing")
-        return
-
 
     title, link = get_latest_post()
 
-
-    if not link:
-        return
-
-
-    last = read_last()
-
-
-    if link == last:
-        print("No new announcement")
-        return
-
-
-    send_telegram(title, link)
-
-    save_last(link)
-
-
-    print("Done")
-
+    if link:
+        send_telegram(title, link)
 
 
 if __name__ == "__main__":
