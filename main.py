@@ -101,7 +101,12 @@ def send_telegram(post):
     )
 
 
+print("بدء البحث عن المستجدات...")
+
 latest = get_latest_post()
+
+print(latest)
+
 
 if latest:
 
