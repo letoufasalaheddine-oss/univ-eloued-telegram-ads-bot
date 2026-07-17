@@ -8,7 +8,7 @@ URL = "https://www.univ-eloued.dz/ar/ads/"
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNELS = os.getenv("CHANNELS", "").split(",")
 
-OLD_FILE = "last_post.json"
+OLD_FILE = "sent_posts.json"
 
 
 def get_latest_post():
@@ -25,7 +25,10 @@ def get_latest_post():
 
     response.encoding = "utf-8"
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(
+        response.text,
+        "html.parser"
+    )
 
 
     post = soup.find(
@@ -79,9 +82,10 @@ def get_latest_post():
 
 
 
-def load_old_post():
+def load_sent_posts():
 
     try:
+
         with open(
             OLD_FILE,
             "r",
@@ -92,11 +96,16 @@ def load_old_post():
 
     except:
 
-        return None
+        return []
 
 
 
 def save_post(post):
+
+    posts = load_sent_posts()
+
+    posts.append(post)
+
 
     with open(
         OLD_FILE,
@@ -105,7 +114,7 @@ def save_post(post):
     ) as f:
 
         json.dump(
-            post,
+            posts,
             f,
             ensure_ascii=False,
             indent=4
@@ -153,21 +162,29 @@ def main():
 
     print("بدء البحث عن المستجدات...")
 
+
     latest = get_latest_post()
+
 
     print(latest)
 
 
     if latest:
 
-        old = load_old_post()
+        sent_posts = load_sent_posts()
 
 
-        if latest != old:
+        if latest not in sent_posts:
+
+            print("إعلان جديد، يتم الإرسال...")
 
             send_telegram(latest)
 
             save_post(latest)
+
+        else:
+
+            print("هذا الإعلان تم نشره سابقا، لا يوجد إرسال.")
 
 
 
