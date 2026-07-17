@@ -26,45 +26,46 @@ def get_latest_post():
     soup = BeautifulSoup(response.text, "html.parser")
 
 
-    # البحث عن قسم المستجدات
-    title = soup.find(
-        lambda tag: tag.name in ["p", "strong"]
-        and "المستجدات" in tag.text
-    )
-
-
-    if not title:
-        print("لم يتم العثور على قسم المستجدات")
-        return None
-
-
-    container = title.find_parent(
+    containers = soup.find_all(
         "div",
         class_="elementor-widget-container"
     )
 
 
-    if not container:
-        print("لم يتم العثور على حاوية الإعلانات")
-        return None
+    for container in containers:
+
+        if "المستجدات" in container.text:
 
 
-    # استخراج أول إعلان
-    for p in container.find_all("p"):
+            links = container.find_all(
+                "a",
+                href=True
+            )
 
-        link = p.find("a")
 
-        if link:
+            for link in links:
 
-            date = p.find("span")
+                title = link.text.strip()
 
-            post = {
-                "title": link.text.strip(),
-                "link": link.get("href"),
-                "date": date.text.strip() if date else ""
-            }
+                if title:
 
-            return post
+                    parent = link.find_parent("p")
+
+                    date = ""
+
+                    if parent:
+
+                        span = parent.find("span")
+
+                        if span:
+                            date = span.text.strip()
+
+
+                    return {
+                        "title": title,
+                        "link": link["href"],
+                        "date": date
+                    }
 
 
     return None
