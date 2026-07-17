@@ -41,15 +41,12 @@ def get_latest_post():
         if href.startswith("/"):
             href = "https://www.univ-eloued.dz" + href
 
-        # التأكد أن الإعلان باللغة العربية
-        if any('\u0600' <= c <= '\u06FF' for c in title):
+        print("Found:", title)
+        print("URL:", href)
 
-            print("Found Arabic:", title)
-            print("URL:", href)
+        return title, href
 
-            return title, href
-
-    print("No Arabic announcement found")
+    print("No announcement found")
     return None, None
 
 
@@ -72,12 +69,10 @@ def send_telegram(title, link):
 
     message = f"""📢 إعلان جديد - جامعة الوادي
 
-📝 {title}
+{title}
 
 🔗 الرابط:
 {link}
-
-🎓 قناة طلبة جامعة الوادي
 """
 
     for channel in CHANNELS:
@@ -87,7 +82,7 @@ def send_telegram(title, link):
         if not channel:
             continue
 
-        response = requests.post(
+        requests.post(
             f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
             data={
                 "chat_id": channel,
@@ -96,10 +91,7 @@ def send_telegram(title, link):
             timeout=30
         )
 
-        if response.status_code == 200:
-            print("Sent to:", channel)
-        else:
-            print("Telegram error:", response.text)
+        print("Sent to:", channel)
 
 
 def main():
