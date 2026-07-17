@@ -5,8 +5,8 @@ import json
 
 URL = "https://www.univ-eloued.dz/ar/ads/"
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-CHANNELS = os.environ["CHANNELS"]
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHANNELS = os.getenv("CHANNELS", "").split(",")
 
 OLD_FILE = "last_post.json"
 
@@ -17,13 +17,17 @@ def get_latest_post():
         "User-Agent": "Mozilla/5.0"
     }
 
-    response = requests.get(URL, headers=headers)
+    response = requests.get(
+        URL,
+        headers=headers,
+        timeout=30
+    )
+
     response.encoding = "utf-8"
 
     soup = BeautifulSoup(response.text, "html.parser")
 
 
-    # استخراج أول إعلان
     post = soup.find(
         "h3",
         class_="entry-title"
@@ -34,7 +38,10 @@ def get_latest_post():
         return None
 
 
-    link = post.find("a", href=True)
+    link = post.find(
+        "a",
+        href=True
+    )
 
 
     if not link:
@@ -125,32 +132,44 @@ def send_telegram(post):
     )
 
 
-    requests.post(
-        telegram_url,
-        data={
-            "chat_id": CHANNELS,
-            "text": message
-        }
-    )
+    for channel in CHANNELS:
+
+        channel = channel.strip()
+
+        if channel:
+
+            requests.post(
+                telegram_url,
+                data={
+                    "chat_id": channel,
+                    "text": message
+                },
+                timeout=30
+            )
 
 
 
-print("بدء البحث عن المستجدات...")
+def main():
+
+    print("بدء البحث عن المستجدات...")
+
+    latest = get_latest_post()
+
+    print(latest)
 
 
-latest = get_latest_post()
+    if latest:
+
+        old = load_old_post()
 
 
-print(latest)
+        if latest != old:
+
+            send_telegram(latest)
+
+            save_post(latest)
 
 
-if latest:
 
-    old = load_old_post()
-
-
-    if latest != old:
-
-        send_telegram(latest)
-
-        save_post(latest)
+if __name__ == "__main__":
+    main()
