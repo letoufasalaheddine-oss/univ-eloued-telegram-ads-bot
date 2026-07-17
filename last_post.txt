@@ -1,1 +1,7 @@
-
+[
+    {
+        "title": "منصات دفع الحقوق",
+        "link": "https://www.univ-eloued.dz/ar/frais2026/",
+        "date": "يوليو 16, 2026"
+    }
+]
