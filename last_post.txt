@@ -3,5 +3,241 @@
         "title": "منصات دفع الحقوق",
         "link": "https://www.univ-eloued.dz/ar/frais2026/",
         "date": "يوليو 16, 2026"
+    },
+    {
+        "title": "نتائج مسابقة التوظيف على أساس الشهادة للالتحاق برتبة أستاذ مساعد  2025",
+        "link": "https://www.univ-eloued.dz/ar/results_recruitment-_assistant_professor/"
+    },
+    {
+        "title": "إعلان عن فتح باب الترشح لمنحة دراسية (ماستر ودكتوراه) بإندونيسيا 2026-2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%81%d8%aa%d8%ad-%d8%a8%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d9%85%d9%86%d8%ad%d8%a9-%d8%af%d8%b1%d8%a7%d8%b3%d9%8a%d8%a9-%d9%85%d8%a7/"
+    },
+    {
+        "title": "معرض الذكاء الاصطناعي",
+        "link": "https://www.univ-eloued.dz/ar/%d9%85%d8%b9%d8%b1%d8%b6-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a/"
+    },
+    {
+        "title": "إعلان عن فتح باب الترشح لبرنامج المنح الدراسية الدولية «Heydar Aliyev International Education Grant Program – 2026-2027»",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%81%d8%aa%d8%ad-%d8%a8%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d9%85%d9%86%d8%ad-%d8%a7/"
+    },
+    {
+        "title": "Conference on Cybersecurity and Applications (CCA’2026)",
+        "link": "https://www.univ-eloued.dz/ar/conference-on-cybersecurity-and-applications-cca2026/"
+    },
+    {
+        "title": "-Call for Applications Erasmus+ KA171 Staff Mobility",
+        "link": "https://www.univ-eloued.dz/ar/call-for-applications-erasmus-ka171-staff-mobility/"
+    },
+    {
+        "title": "إعلان للمشاركة في بطولة العالم للروبوتات “Robonexus",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d9%84%d9%84%d9%85%d8%b4%d8%a7%d8%b1%d9%83%d8%a9-%d9%81%d9%8a-%d8%a8%d8%b7%d9%88%d9%84%d8%a9-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85-%d9%84%d9%84%d8%b1%d9%88%d8%a8%d9%88/"
+    },
+    {
+        "title": "إعلان للترشح لجائزة شنقيط 2026",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d9%84%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d8%b4%d9%86%d9%82%d9%8a%d8%b7-2026/"
+    },
+    {
+        "title": "بخصوص ترشيح شخصية وطنية مؤثرة في مجال العمل الاجتماعي من اجل تكريمها من قبل جامعة الدول العربية",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a8%d8%ae%d8%b5%d9%88%d8%b5-%d8%aa%d8%b1%d8%b4%d9%8a%d8%ad-%d8%b4%d8%ae%d8%b5%d9%8a%d8%a9-%d9%88%d8%b7%d9%86%d9%8a%d8%a9-%d9%85%d8%a4%d8%ab%d8%b1%d8%a9-%d9%81%d9%8a-%d9%85%d8%ac%d8%a7%d9%84-%d8%a7/"
+    },
+    {
+        "title": "إعلان عن شغور منصب مدير المالية بالمركز الإفريقي لمكافحة الأمراض و الوقاية",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d8%b4%d8%ba%d9%88%d8%b1-%d9%85%d9%86%d8%b5%d8%a8-%d9%85%d8%af%d9%8a%d8%b1-%d8%a7%d9%84%d9%85%d8%a7%d9%84%d9%8a%d8%a9-%d8%a8%d8%a7%d9%84%d9%85%d8%b1%d9%83/"
+    },
+    {
+        "title": "إعلان عن الملتقى  الدولي الموسوم  بعنوان تقييم سياسات مكافحة الفساد من منظور التنمية المستدامة",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%84%d8%aa%d9%82%d9%89-%d8%aa%d9%82%d9%8a%d9%8a%d9%85-%d8%b3%d9%8a%d8%a7%d8%b3%d8%a7%d8%aa-%d9%85%d9%83%d8%a7%d9%81%d8%ad%d8%a9-%d8%a7%d9%84%d9%81/"
+    },
+    {
+        "title": "إعلان عن  منحة دراسية  في طور الماستر و الدكتوراه في جامعة سانكيونكوان الكورية الجنوبية لسنة 2026 / 2027.",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad%d8%a9-%d8%af%d8%b1%d8%a7%d8%b3%d9%8a%d8%a9-%d9%81%d9%8a-%d8%b7%d9%88%d8%b1-%d8%a7%d9%84%d9%85%d8%a7%d8%b3%d8%aa%d8%b1-%d9%88/"
+    },
+    {
+        "title": "وزارة التعليم العالي والبحث العلمي تطلق مشروع “أدرس بالجزائر”",
+        "link": "https://www.univ-eloued.dz/ar/%d9%88%d8%b2%d8%a7%d8%b1%d8%a9-%d8%a7%d9%84%d8%aa%d8%b9%d9%84%d9%8a%d9%85-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%8a-%d9%88%d8%a7%d9%84%d8%a8%d8%ad%d8%ab-%d8%a7%d9%84%d8%b9%d9%84%d9%85%d9%8a-%d8%aa%d8%b7/"
+    },
+    {
+        "title": "إعلان عن جائزة جامعة الصداقة بين الشعوب  (RUDN) في الكيمياء",
+        "link": "https://www.univ-eloued.dz/ar/%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d8%ac%d8%a7%d9%85%d8%b9%d8%a9-%d8%a7%d9%84%d8%b5%d8%af%d8%a7%d9%82%d8%a9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d8%b4%d8%b9%d9%88%d8%a8-rudn-%d9%81%d9%8a-%d8%a7%d9%84%d9%83/"
+    },
+    {
+        "title": "اعلان عن الطبعة الثانية لجوائز التميز بجامعة الوادي",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d8%a7%d9%84%d8%b7%d8%a8%d8%b9%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a%d8%a9-%d9%84%d8%ac%d9%88%d8%a7%d8%a6%d8%b2-%d8%a7%d9%84%d8%aa%d9%85%d9%8a%d8%b2/"
+    },
+    {
+        "title": "النتائج النهائية لبرنامج الحركية قصير المدى بالخارج لفئة الموظفين الإداريين والتقنيين لسنة 2026",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d9%84%d9%86%d8%aa%d8%a7%d8%a6%d8%ac-%d8%a7%d9%84%d9%86%d9%87%d8%a7%d8%a6%d9%8a%d8%a9-%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d8%ad%d8%b1%d9%83%d9%8a%d8%a9-%d9%82%d8%b5%d9%8a/"
+    },
+    {
+        "title": "دعوة لتقديم طلبات الترشح لجائزة اليونسكو لعام 2026 لتعليم الفتيات والنساء.",
+        "link": "https://www.univ-eloued.dz/ar/%d8%af%d8%b9%d9%88%d8%a9-%d9%84%d8%aa%d9%82%d8%af%d9%8a%d9%85-%d8%b7%d9%84%d8%a8%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d8%a7%d9%84%d9%8a%d9%88%d9%86/"
+    },
+    {
+        "title": "دعوة للمشاركة في الطبعة الخامسة (05) من نصف المارطون الجامعي الجزائري – التونسي",
+        "link": "https://www.univ-eloued.dz/ar/%d8%af%d8%b9%d9%88%d8%a9-%d9%84%d9%84%d9%85%d8%b4%d8%a7%d8%b1%d9%83%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%b7%d8%a8%d8%b9%d8%a9-%d8%a7%d9%84%d8%ae%d8%a7%d9%85%d8%b3%d8%a9-05-%d9%85%d9%86-%d9%86%d8%b5/"
+    },
+    {
+        "title": "حفل تسليم جائزة رئيس الجمهورية للباحث المبتكر -الطبعة الثانية",
+        "link": "https://www.univ-eloued.dz/ar/%d8%ad%d9%81%d9%84-%d8%aa%d8%b3%d9%84%d9%8a%d9%85-%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d8%b1%d8%a6%d9%8a%d8%b3-%d8%a7%d9%84%d8%ac%d9%85%d9%87%d9%88%d8%b1%d9%8a%d8%a9-%d9%84%d9%84%d8%a8%d8%a7%d8%ad%d8%ab/"
+    },
+    {
+        "title": "اعلان عن برنامج منحة المعهد الهندي للتكنولوجيا الصناعية للعام الدراسي 2026-202",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d9%85%d9%86%d8%ad%d8%a9-%d8%a7%d9%84%d9%85%d8%b9%d9%87%d8%af-%d8%a7%d9%84%d9%87%d9%86%d8%af%d9%8a-%d9%84%d9%84%d8%aa/"
+    },
+    {
+        "title": "عرض منحة  لمزاولة دورة تكوينية في بيروت",
+        "link": "https://www.univ-eloued.dz/ar/%d8%b9%d8%b1%d8%b6-%d9%85%d9%86%d8%ad%d8%a9-%d9%84%d9%85%d8%b2%d8%a7%d9%88%d9%84%d8%a9-%d8%a7%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d8%a8%d8%ad%d8%ab%d9%8a-%d8%a7%d9%84%d8%a5/"
+    },
+    {
+        "title": "عرض منحة لمزاولة البرنامج البحثي « الإنسان والغلاف الحيوي » تحت إشراف لجنة الأمم المتحدة",
+        "link": "https://www.univ-eloued.dz/ar/%d8%b9%d8%b1%d8%b6-%d9%85%d9%86%d8%ad%d8%a9-%d9%84%d9%85%d8%b2%d8%a7%d9%88%d9%84%d8%a9-%d8%a7%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d8%a8%d8%ad%d8%ab%d9%8a-%d8%a7%d9%84%d8%a5-2/"
+    },
+    {
+        "title": "تنظيم تظاهرتين عاميتين بجامعة باجي مختار عنابة  2026",
+        "link": "https://www.univ-eloued.dz/ar/%d8%b9%d8%b1%d8%b6-%d9%85%d9%86%d8%ad%d8%a9-%d9%84%d9%85%d8%b2%d8%a7%d9%88%d9%84%d8%a9-%d8%a7%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d8%a8%d8%ad%d8%ab%d9%8a-%d8%a7%d9%84%d8%a5-2-2/"
+    },
+    {
+        "title": "Call for Participation: Erasmus+ Staff Training Opportunity – 2nd International Week for Libraries (Greece)",
+        "link": "https://www.univ-eloued.dz/ar/call-for-participation-erasmus-staff-training-opportunity-2nd-international-week-for-libraries-greece/"
+    },
+    {
+        "title": "بخصوص برنامج منحة (جمهورية اندونيسيا) INSAN للسنة الجامعية 2026-2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a8%d8%ae%d8%b5%d9%88%d8%b5-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d9%85%d9%86%d8%ad%d8%a9-%d8%ac%d9%85%d9%87%d9%88%d8%b1%d9%8a%d8%a9-%d8%a7%d9%86%d8%af%d9%88%d9%86%d9%8a%d8%b3%d9%8a%d8%a7-in/"
+    },
+    {
+        "title": "اعلان عن منح  الماستر و الدكتوراه بجامعة مولانا مالك إبراهيم الإسلامية الحكومية – مالانغ (إندونيسيا)   السنة الجامعية: 2026 / 2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad-%d8%a7%d9%84%d9%85%d8%a7%d8%b3%d8%aa%d8%b1-%d9%88-%d8%a7%d9%84%d8%af%d9%83%d8%aa%d9%88%d8%b1%d8%a7%d9%87-%d8%a8%d8%ac%d8%a7/"
+    },
+    {
+        "title": "اعلان بخصوص برنامج منح ماستر في رومانيا للسنة الجامعية 2026-2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%a8%d8%ae%d8%b5%d9%88%d8%b5-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d9%85%d9%86%d8%ad-%d9%85%d8%a7%d8%b3%d8%aa%d8%b1-%d9%81%d9%8a-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d9%8a/"
+    },
+    {
+        "title": "دعوة للتصويت لصالح المشاريع الجزائرية المرشحة لنيل جوائز القمة العالمية لمجتمع المعلومات لسنة 2026",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d9%84%d9%82%d9%85%d8%a9-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d9%84%d9%85%d8%ac%d8%aa%d9%85%d8%b9-%d8%a7%d9%84%d9%85%d8%b9%d9%84%d9%88%d9%85%d8%a7%d8%aa-%d9%84%d8%b3%d9%86%d8%a9-202/"
+    },
+    {
+        "title": "Septième Edition de l’Accélérateur international de start-up « SBER 500 »2026",
+        "link": "https://www.univ-eloued.dz/ar/septieme-edition-de-laccelerateur-international-de-start-up-sber-500-2026/"
+    },
+    {
+        "title": "Appel à Candidature pour postes académiques à l’Université Pavol Jozef Safarik à Kosice (Slovaquie)",
+        "link": "https://www.univ-eloued.dz/ar/appel-a-candidature-pour-postes-academiques-a-luniversite-pavol-jozef-safarik-a-kosice-slovaquie/"
+    },
+    {
+        "title": "إعلان عن منحة فولبرايت FULBRIGHT الدراسية للباحثين و الزائرين 2026/ 2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad%d8%a9-%d9%81%d9%88%d9%84%d8%a8%d8%b1%d8%a7%d9%8a%d8%aa-fulbright-%d8%a7%d9%84%d8%af%d8%b1%d8%a7%d8%b3%d9%8a%d8%a9-%d9%84%d9%84%d8%a8/"
+    },
+    {
+        "title": "إعلان للترشح لجائزة UNESCO لاستخدام تكنولوجيات الإعلام والاتصال في التعليم",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d9%84%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-unesco-%d9%84%d8%a7%d8%b3%d8%aa%d8%ae%d8%af%d8%a7%d9%85-%d8%aa%d9%83%d9%86%d9%88%d9%84%d9%88/"
+    },
+    {
+        "title": "برنامج منح ماستر ودكتوراه في أذربيجان للعام الدراسي 2027/2026",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d9%85%d9%86%d8%ad-%d9%85%d8%a7%d8%b3%d8%aa%d8%b1-%d9%88%d8%af%d9%83%d8%aa%d9%88%d8%b1%d8%a7%d9%87-%d9%81%d9%8a-%d8%a3%d8%b0%d8%b1%d8%a8%d9%8a%d8%ac%d8%a7%d9%86/"
+    },
+    {
+        "title": "برنامج منحة  MGIMO/Russie",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d9%85%d9%86%d8%ad%d8%a9-mgimo-russie/"
+    },
+    {
+        "title": "عرض منحة بجامعة UMPWR الإندونيسية2027/2026",
+        "link": "https://www.univ-eloued.dz/ar/%d8%b9%d8%b1%d8%b6-%d9%85%d9%86%d8%ad%d8%a9-%d8%a8%d8%ac%d8%a7%d9%85%d8%b9%d8%a9-umpwr-%d8%a7%d9%84%d8%a5%d9%86%d8%af%d9%88%d9%86%d9%8a%d8%b3%d9%8a%d8%a92027-2026/"
+    },
+    {
+        "title": "دعوة للمشاركة في الملتقى الدولي المنظم من طرف وزارة الشؤون الدينية والأوقاف",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d9%84%d9%85%d9%84%d8%aa%d9%82%d9%89-%d8%a7%d9%84%d8%af%d9%88%d9%84%d9%8a-%d8%a7%d9%84%d9%85%d9%86%d8%b8%d9%85-%d9%85%d9%86-%d8%b7%d8%b1%d9%81-%d9%88%d8%b2%d8%a7%d8%b1%d8%a9-%d8%a7%d9%84%d8%b4/"
+    },
+    {
+        "title": "برنامج منح المملكة السعودية “أدرس في السعودية” بعنوان السنة الجامعية 2027/2026",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d9%85%d9%86%d8%ad-%d8%a7%d9%84%d9%85%d9%85%d9%84%d9%83%d8%a9-%d8%a7%d9%84%d8%b3%d8%b9%d9%88%d8%af%d9%8a%d8%a9-%d8%a3%d8%af%d8%b1%d8%b3-%d9%81%d9%8a/"
+    },
+    {
+        "title": "منحة دراسات عليا في جمهورية باكستان الاسلامية للعام الدراسي 2027/2026",
+        "link": "https://www.univ-eloued.dz/ar/%d9%85%d9%86%d8%ad%d8%a9-%d8%af%d8%b1%d8%a7%d8%b3%d8%a7%d8%aa-%d8%b9%d9%84%d9%8a%d8%a7-%d9%81%d9%8a-%d8%ac%d9%85%d9%87%d9%88%d8%b1%d9%8a%d8%a9-%d8%a8%d8%a7%d9%83%d8%b3%d8%aa%d8%a7%d9%86-%d8%a7%d9%84/"
+    },
+    {
+        "title": "إعلان عن فتح باب الترشح لبرنامج الزمالة البحثية بكرسي الأمير عبد القادر – جامعة أكسفورد",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%81%d8%aa%d8%ad-%d8%a8%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d8%b2%d9%85%d8%a7%d9%84/"
+    },
+    {
+        "title": "تعيين في مناصب للمتخصصين في مجال حقوق الإنسان (جويلية2026 – أفريل 2027)",
+        "link": "https://www.univ-eloued.dz/ar/%d8%aa%d8%b9%d9%8a%d9%8a%d9%86-%d9%81%d9%8a-%d9%85%d9%86%d8%a7%d8%b5%d8%a8-%d9%84%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d9%8a%d9%86-%d9%81%d9%8a-%d9%85%d8%ac%d8%a7%d9%84-%d8%ad%d9%82%d9%88/"
+    },
+    {
+        "title": "إعلان عن إطلاق جائزة دولية مرموقة في مجال الكيمياء",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d8%a5%d8%b7%d9%84%d8%a7%d9%82-%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d8%af%d9%88%d9%84%d9%8a%d8%a9-%d9%85%d8%b1%d9%85%d9%88%d9%82%d8%a9-%d9%81%d9%8a-%d9%85%d8%ac/"
+    },
+    {
+        "title": "اعلان عن تنظيم يوم إعلامي حول برنامج Marie Skłodowska-Curie Actions (MSCA)",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d8%aa%d9%86%d8%b8%d9%8a%d9%85-%d9%8a%d9%88%d9%85-%d8%a5%d8%b9%d9%84%d8%a7%d9%85%d9%8a-%d8%ad%d9%88%d9%84-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-marie-sklodow/"
+    },
+    {
+        "title": "إعلان عن منح دراسية بجامعة نواكشوط العصرية – موريتانيا",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad-%d8%af%d8%b1%d8%a7%d8%b3%d9%8a%d8%a9-%d8%a8%d8%ac%d8%a7%d9%85%d8%b9%d8%a9-%d9%86%d9%88%d8%a7%d9%83%d8%b4%d9%88%d8%b7-%d8%a7%d9%84%d8%b9/"
+    },
+    {
+        "title": "إعلان عن اجراء استشارة رقم :2026/02 الخاصة بالخدمات الإجتماعية",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d8%a7%d8%ac%d8%b1%d8%a7%d8%a1-%d8%a7%d8%b3%d8%aa%d8%b4%d8%a7%d8%b1%d8%a9-%d8%b1%d9%82%d9%85-2026-02/"
+    },
+    {
+        "title": "المدرسة الصيفية عبر الأطلسي في الطب الشخصي والابتكار في الذكاء الاصطناعي.",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d9%84%d9%85%d8%af%d8%b1%d8%b3%d8%a9-%d8%a7%d9%84%d8%b5%d9%8a%d9%81%d9%8a%d8%a9-%d8%b9%d8%a8%d8%b1-%d8%a7%d9%84%d8%a3%d8%b7%d9%84%d8%b3%d9%8a-%d9%81%d9%8a-%d8%a7%d9%84%d8%b7%d8%a8-%d8%a7%d9%84/"
+    },
+    {
+        "title": "دعوة للمشاركة في البطولة الدولية الجيولوجية في روسيا",
+        "link": "https://www.univ-eloued.dz/ar/%d8%af%d8%b9%d9%88%d8%a9-%d9%84%d9%84%d9%85%d8%b4%d8%a7%d8%b1%d9%83%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%a8%d8%b7%d9%88%d9%84%d8%a9-%d8%a7%d9%84%d8%af%d9%88%d9%84%d9%8a%d8%a9-%d8%a7%d9%84%d8%ac%d9%8a/"
+    },
+    {
+        "title": "إعلان عن اجراء استشارة رقم :2026/03 الخاصة بالخدمات الإجتماعية تنظيم عمرة لفائدة مستخدمي جامعة الشهيد حمه لخضر بالوادي شهر أوت وسبتمبر 2026",
+        "link": "https://www.univ-eloued.dz/ar/omraue2026/"
+    },
+    {
+        "title": "إعلان لفائدة حاملي المشاريع والطلبة المبتكرين",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d9%84%d9%81%d8%a7%d8%a6%d8%af%d8%a9-%d8%ad%d8%a7%d9%85%d9%84%d9%8a-%d8%a7%d9%84%d9%85%d8%b4%d8%a7%d8%b1%d9%8a%d8%b9-%d9%88%d8%a7%d9%84%d8%b7%d9%84%d8%a8%d8%a9-%d8%a7/"
+    },
+    {
+        "title": "دعوة للمشاركة في أولمبياد اللغة الانجليزية العالمي للجامعات 2026.",
+        "link": "https://www.univ-eloued.dz/ar/%d8%af%d8%b9%d9%88%d8%a9-%d9%84%d9%84%d9%85%d8%b4%d8%a7%d8%b1%d9%83%d8%a9-%d9%81%d9%8a-%d8%a3%d9%88%d9%84%d9%85%d8%a8%d9%8a%d8%a7%d8%af-%d8%a7%d9%84%d9%84%d8%ba%d8%a9-%d8%a7%d9%84%d8%a7%d9%86/"
+    },
+    {
+        "title": "إعلان عن منح دراسية بجامعة نواكشوط العصرية – موريتانيا",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad-%d8%af%d8%b1%d8%a7%d8%b3%d9%8a%d8%a9-%d8%a8%d8%ac%d8%a7%d9%85%d8%b9%d8%a9-%d9%86%d9%88%d8%a7%d9%83%d8%b4%d9%88%d8%b7-%d8%a7%d9%84%d8%b9-2/"
+    },
+    {
+        "title": "إعلان عن المنح المؤقت  استشارة رقم :2026/02 الخاصة بالخدمات الإجتماعية",
+        "link": "https://www.univ-eloued.dz/ar/es_et2026/"
+    },
+    {
+        "title": "إعلان من لجنة الخدمات الاجتماعية بخصوص المخيم الصيفي 2026 الوجهة الداخلية",
+        "link": "https://www.univ-eloued.dz/ar/es_et2026-2/"
+    },
+    {
+        "title": "إعلان عن منحة الامتياز المكسيكية 2026-2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad%d8%a9-%d8%a7%d9%84%d8%a7%d9%85%d8%aa%d9%8a%d8%a7%d8%b2-%d8%a7%d9%84%d9%85%d9%83%d8%b3%d9%8a%d9%83%d9%8a%d8%a9-2026-2027/"
+    },
+    {
+        "title": "إعلان عن منحة بالفيتنام لسنة الجامعية 2026-2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad%d8%a9-%d8%a8%d8%a7%d9%84%d9%81%d9%8a%d8%aa%d9%86%d8%a7%d9%85-%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d8%ac%d8%a7%d9%85%d8%b9%d9%8a%d8%a9-2/"
+    },
+    {
+        "title": "إعلان عن المنح المؤقت  استشارة رقم :2026/03 الخاصة بالخدمات الإجتماعية",
+        "link": "https://www.univ-eloued.dz/ar/omra2026_ss/"
+    },
+    {
+        "title": "اعلان عن منح للماستر والدكتوراه: KOIKA – CIAT 2027",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad-%d9%84%d9%84%d9%85%d8%a7%d8%b3%d8%aa%d8%b1-%d9%88%d8%a7%d9%84%d8%af%d9%83%d8%aa%d9%88%d8%b1%d8%a7%d9%87-koika-ciat-2027/"
+    },
+    {
+        "title": "إعلان عن فتح باب الترشح لمنصب مدير/مديرة وحدة تنسيق عقد الأمم المتحدة لعلوم المحيطات باليونسكو",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%81%d8%aa%d8%ad-%d8%a8%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d9%85%d9%86%d8%b5%d8%a8-%d9%85%d8%af%d9%8a%d8%b1-%d9%85%d8%af%d9%8a%d8%b1/"
+    },
+    {
+        "title": "إعلان عن فتح باب الترشح للجائزة الدولية 2027 لبرنامج لوريال – اليونسكو “من أجل المرأة في العلم”",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a5%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%81%d8%aa%d8%ad-%d8%a8%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d9%84%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d8%a7%d9%84%d8%af%d9%88%d9%84%d9%8a-2/"
+    },
+    {
+        "title": "المنشور الوزاري المتعلق بالتسجيلات وتوجيه حاملي شهادة البكالوريا 2026",
+        "link": "https://www.univ-eloued.dz/ar/ministerial-circular-regarding-registration-and-guidance-for-2026-baccalaureate-graduates/"
     }
 ]
