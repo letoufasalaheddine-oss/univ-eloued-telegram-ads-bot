@@ -8,10 +8,43 @@ URL = "https://www.univ-eloued.dz/ar/ads/"
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNELS = os.getenv("CHANNELS", "").split(",")
 
-OLD_FILE = "last_post.txt"
+LAST_FILE = "last_post.txt"
 
 
-def get_latest_post():
+def load_posts():
+
+    if not os.path.exists(LAST_FILE):
+        return []
+
+    try:
+        with open(
+            LAST_FILE,
+            "r",
+            encoding="utf-8"
+        ) as f:
+            return json.load(f)
+
+    except:
+        return []
+
+
+def save_posts(posts):
+
+    with open(
+        LAST_FILE,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            posts,
+            f,
+            ensure_ascii=False,
+            indent=4
+        )
+
+
+def get_new_posts():
 
     headers = {
         "User-Agent": "Mozilla/5.0"
@@ -31,112 +64,55 @@ def get_latest_post():
     )
 
 
-    post = soup.find(
+    posts = []
+
+
+    for item in soup.find_all(
         "h3",
         class_="entry-title"
-    )
+    ):
 
-
-    if not post:
-        return None
-
-
-    link = post.find(
-        "a",
-        href=True
-    )
-
-
-    if not link:
-        return None
-
-
-    title = link.text.strip()
-    url = link["href"]
-
-
-    date = ""
-
-    parent = post.find_parent(
-        "div",
-        class_="rt-detail"
-    )
-
-
-    if parent:
-
-        date_tag = parent.find(
-            "span",
-            class_="date"
+        a = item.find(
+            "a",
+            href=True
         )
 
-        if date_tag:
-            date = date_tag.text.strip()
+
+        if not a:
+            continue
 
 
-    return {
-        "title": title,
-        "link": url,
-        "date": date
-    }
-
-
-
-def load_sent_posts():
-
-    try:
-
-        with open(
-            OLD_FILE,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
-            return json.load(f)
-
-    except:
-
-        return []
-
-
-
-def save_post(post):
-
-    posts = load_sent_posts()
-
-    posts.append(post)
-
-
-    with open(
-        OLD_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            posts,
-            f,
-            ensure_ascii=False,
-            indent=4
+        title = a.get_text(
+            strip=True
         )
+
+        link = a["href"].strip()
+
+
+        posts.append(
+            {
+                "title": title,
+                "link": link
+            }
+        )
+
+
+    return posts
 
 
 
 def send_telegram(post):
 
-    message = f"""
-📢 مستجد جديد - جامعة الوادي
+    message = f"""📢 مستجد جديد - جامعة الوادي
 
 📝 {post['title']}
-
-📅 {post['date']}
 
 🔗 الرابط:
 {post['link']}
 """
 
 
-    telegram_url = (
+    url = (
         f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     )
 
@@ -148,10 +124,11 @@ def send_telegram(post):
         if channel:
 
             requests.post(
-                telegram_url,
+                url,
                 data={
                     "chat_id": channel,
-                    "text": message
+                    "text": message,
+                    "disable_web_page_preview": False
                 },
                 timeout=30
             )
@@ -160,31 +137,59 @@ def send_telegram(post):
 
 def main():
 
-    print("بدء البحث عن المستجدات...")
+    print("بدء مراقبة مستجدات جامعة الوادي...")
 
 
-    latest = get_latest_post()
+    old_posts = load_posts()
 
 
-    print(latest)
+    old_links = {
+        post["link"]
+        for post in old_posts
+    }
 
 
-    if latest:
-
-        sent_posts = load_sent_posts()
+    current_posts = get_new_posts()
 
 
-        if latest not in sent_posts:
+    new_posts = []
 
-            print("إعلان جديد، يتم الإرسال...")
 
-            send_telegram(latest)
+    for post in reversed(current_posts):
 
-            save_post(latest)
+        if post["link"] not in old_links:
 
-        else:
+            new_posts.append(post)
 
-            print("هذا الإعلان تم نشره سابقا.")
+
+
+    if not new_posts:
+
+        print("لا توجد مستجدات جديدة.")
+
+        return
+
+
+
+    for post in new_posts:
+
+        print(
+            "إرسال:",
+            post["title"]
+        )
+
+        send_telegram(post)
+
+
+
+    save_posts(
+        old_posts + new_posts
+    )
+
+
+    print(
+        f"تم إرسال {len(new_posts)} مستجد."
+    )
 
 
 
