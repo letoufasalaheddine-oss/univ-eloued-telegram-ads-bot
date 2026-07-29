@@ -239,5 +239,9 @@
     {
         "title": "المنشور الوزاري المتعلق بالتسجيلات وتوجيه حاملي شهادة البكالوريا 2026",
         "link": "https://www.univ-eloued.dz/ar/ministerial-circular-regarding-registration-and-guidance-for-2026-baccalaureate-graduates/"
+    },
+    {
+        "title": "Erasmus+ International Credit Mobility (ICM) Opportunity University of El Oued, Algeria to Sapienza University of Rome, Italy",
+        "link": "https://www.univ-eloued.dz/ar/icm_rome_italy/"
     }
 ]
