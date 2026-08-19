@@ -243,5 +243,17 @@
     {
         "title": "Erasmus+ International Credit Mobility (ICM) Opportunity University of El Oued, Algeria to Sapienza University of Rome, Italy",
         "link": "https://www.univ-eloued.dz/ar/icm_rome_italy/"
+    },
+    {
+        "title": "الترشح للدخول إلى السنة الأولى و الثانية ماستر و السنة الثالثة ليسانس",
+        "link": "https://www.univ-eloued.dz/ar/frais2026-2/"
+    },
+    {
+        "title": "رابط التسجيلات في الماستر خريجي جامعة الوادي للموسم 2025-2026",
+        "link": "https://www.univ-eloued.dz/ar/frais2026-2-2/"
+    },
+    {
+        "title": "رابط تسجيلات الماستر سنة اولى ، سنة ثانية ، سنة ثالثة ليسانس  قدامى",
+        "link": "https://www.univ-eloued.dz/ar/frais2026-2-2-2/"
     }
 ]
