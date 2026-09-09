@@ -259,5 +259,17 @@
     {
         "title": "إعلان التحويلات الجامعية الداخلية والخارجية للطلبة القدامى",
         "link": "https://www.univ-eloued.dz/ar/trans2026/"
+    },
+    {
+        "title": "Erasmus+ KA171 International Mobility Program with the University of Padua, Italy",
+        "link": "https://www.univ-eloued.dz/ar/erasmus-ka171-international-mobility-program-with-the-university-of-padua-italy/"
+    },
+    {
+        "title": "Staff Mobility Erasmus+ KA171",
+        "link": "https://www.univ-eloued.dz/ar/staff-mobility-erasmus-ka171/"
+    },
+    {
+        "title": "Student Mobility Erasmus+ KA171",
+        "link": "https://www.univ-eloued.dz/ar/student-mobility-erasmus-ka171/"
     }
 ]
