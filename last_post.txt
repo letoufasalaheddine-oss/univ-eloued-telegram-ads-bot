@@ -271,5 +271,9 @@
     {
         "title": "Student Mobility Erasmus+ KA171",
         "link": "https://www.univ-eloued.dz/ar/student-mobility-erasmus-ka171/"
+    },
+    {
+        "title": "إعلان للطلبة المتفوقين: منحة تحضير الدكتوراه بالجمهورية التونسية",
+        "link": "https://www.univ-eloued.dz/ar/doc_tun/"
     }
 ]
