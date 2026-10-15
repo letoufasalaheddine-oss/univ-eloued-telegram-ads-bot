@@ -359,5 +359,9 @@
     {
         "title": "Erasmus+ Master Students Mobility to Riga Technical University – Internal Classification Results",
         "link": "https://www.univ-eloued.dz/ar/phd-master-students-mobility_sapienz/"
+    },
+    {
+        "title": "Erasmus+ KA171 International Mobility Programme with Hellenic Mediterranean University (HMU), Greece",
+        "link": "https://www.univ-eloued.dz/ar/erasmus-ka171-international-mobility-programme-with-hellenic-mediterranean-university-hmu-greece/"
     }
 ]
