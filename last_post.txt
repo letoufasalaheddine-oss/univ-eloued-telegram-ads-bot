@@ -347,5 +347,17 @@
     {
         "title": "ب/خ إعلانات بخصوص مسابقة الدكتوراه",
         "link": "https://www.univ-eloued.dz/ar/doc2026-2-2/"
+    },
+    {
+        "title": "Erasmus+ PhD Students Mobility to Sapienza University – Internal Classification Results",
+        "link": "https://www.univ-eloued.dz/ar/phd-students_sapienza/"
+    },
+    {
+        "title": "Erasmus+ Staff Mobility to Sapienza University – Internal Classification Results",
+        "link": "https://www.univ-eloued.dz/ar/phd-staff-mobility_sapienza/"
+    },
+    {
+        "title": "Erasmus+ Master Students Mobility to Riga Technical University – Internal Classification Results",
+        "link": "https://www.univ-eloued.dz/ar/phd-master-students-mobility_sapienz/"
     }
 ]
