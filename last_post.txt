@@ -367,5 +367,9 @@
     {
         "title": "إعلان عن منح مؤقت للاستشارة 04 / 2026 الخاصة بالخدمات الإجتماعية",
         "link": "https://www.univ-eloued.dz/ar/consu_gran/"
+    },
+    {
+        "title": "INTERNAL CLASSIFICATION RESULTS-Erasmus+ International Mobility Programme",
+        "link": "https://www.univ-eloued.dz/ar/internal-classification-results-erasmus-international-mobility-programme/"
     }
 ]
