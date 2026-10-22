@@ -371,5 +371,9 @@
     {
         "title": "INTERNAL CLASSIFICATION RESULTS-Erasmus+ International Mobility Programme",
         "link": "https://www.univ-eloued.dz/ar/internal-classification-results-erasmus-international-mobility-programme/"
+    },
+    {
+        "title": "مسابقة توظيف على أساس الاختبارات بجامعة الشهيد حمه لخضر بالوادي",
+        "link": "https://www.univ-eloued.dz/ar/54646-2-11/"
     }
 ]
