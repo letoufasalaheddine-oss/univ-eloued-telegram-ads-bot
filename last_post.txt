@@ -387,5 +387,9 @@
     {
         "title": "بخصوص توزيع المترشحين المقبلين على إجتياز مسابقة الدكتوراه – بعنـوان السنـة الجامعيـة 2026-2027",
         "link": "https://www.univ-eloued.dz/ar/accepted-candidates-doctorate-2026-2027/"
+    },
+    {
+        "title": "Appel à candidature pour les postes vacants à l’UA",
+        "link": "https://www.univ-eloued.dz/ar/appel-a-candidature-pour-les-postes-vacants-a-lua-%d9%81%d9%8a-2/"
     }
 ]
