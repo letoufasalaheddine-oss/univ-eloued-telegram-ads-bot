@@ -443,5 +443,17 @@
     {
         "title": "إعلان نتائج قرعة رحلة مصر",
         "link": "https://www.univ-eloued.dz/ar/resultats-tirage-egypte/"
+    },
+    {
+        "title": "Avis d’appel à candidatures – Postes vacants à la Commission de l’Union africaine",
+        "link": "https://www.univ-eloued.dz/ar/avis-dappel-a-candidatures-postes-vacants-a-la-commission-de-lunion-africaine/"
+    },
+    {
+        "title": "اعلان عن منح بالجامعات البيلاروسية بعنوان السنة الجامعية 2027/2028",
+        "link": "https://www.univ-eloued.dz/ar/%d8%a7%d8%b9%d9%84%d8%a7%d9%86-%d8%b9%d9%86-%d9%85%d9%86%d8%ad-%d8%a8%d8%a7%d9%84%d8%ac%d8%a7%d9%85%d8%b9%d8%a7%d8%aa-%d8%a7%d9%84%d8%a8%d9%8a%d9%84%d8%a7%d8%b1%d9%88%d8%b3%d9%8a%d8%a9-%d8%a8%d8%b9/"
+    },
+    {
+        "title": "فتح باب الترشح لبرنامج الماستر والدكتوراه بجمهورية كوريا الجنوبية (GIST) للسنة الجامعية 2027-2028",
+        "link": "https://www.univ-eloued.dz/ar/%d9%81%d8%aa%d8%ad-%d8%a8%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d8%b1%d8%b4%d8%ad-%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d9%85%d8%a7%d8%b3%d8%aa%d8%b1-%d9%88%d8%a7%d9%84%d8%af%d9%83%d8%aa/"
     }
 ]
